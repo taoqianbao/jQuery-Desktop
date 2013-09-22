@@ -30,7 +30,9 @@
     </head>
     <body data-accent="blue">
         @* Templates: *@
-        @Scripts.Render("~/bundles/app-templates")
+        @*@Scripts.Render("~/bundles/app-templates")*@
+
+        @Html.RenderEmberTemplates()   
 
         @* Scripts: *@
         @Scripts.Render("~/bundles/app")

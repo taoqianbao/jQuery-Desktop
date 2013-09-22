@@ -23,7 +23,8 @@ namespace EmberWebApp
             bundles.Add(new ScriptBundle("~/bundles/modernizr")
                 .Include("~/Scripts/modernizr-*"));
 
-            bundles.Add(new Bundle("~/bundles/app-templates", new EmberHandlebarsBundleTransform() { MinifyTemplates = false })
+            bundles.Add(new Bundle("~/bundles/app-templates", 
+                new EmberHandlebarsBundleTransform() { MinifyTemplates = false })
                 .Include("~/Scripts/App/Templates/*.handlebars"));
 
             bundles.Add(new ScriptBundle("~/bundles/app")
@@ -47,7 +48,7 @@ namespace EmberWebApp
             bundles.Add(cssBundle);
 
 #if DEBUG
-            BundleTable.EnableOptimizations = true;
+            BundleTable.EnableOptimizations = false;
 #else
             BundleTable.EnableOptimizations = true; // Needed to ensure Handlebars templates are pre-compiled.
 #endif
