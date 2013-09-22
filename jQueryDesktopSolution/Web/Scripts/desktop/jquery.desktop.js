@@ -102,9 +102,14 @@ var JQD = (function ($, window, document, undefined) {
 
                 // Cancel mousedown.
                 d.mousedown(function (ev) {
+
                     var tags = ['a', 'button', 'input', 'select', 'textarea', 'tr'];
 
-                    if (!$(ev.target).closest(tags).length) {
+                    //fix bug by peter @ 2013-09-22
+                    //Jquery 1.9 (array of strings appendTo element) - Not Working
+                    var eles = tags.join(',');
+
+                    if (!$(ev.target).closest(eles).length) {
                         JQD.util.clear_active();
                         ev.preventDefault();
                         ev.stopPropagation();
@@ -118,6 +123,7 @@ var JQD = (function ($, window, document, undefined) {
 
                 // Relative or remote links?
                 d.on('click', 'a', function (ev) {
+
                     var url = $(this).attr('href');
                     this.blur();
 
@@ -132,9 +138,14 @@ var JQD = (function ($, window, document, undefined) {
 
                 // Make top menus active.
                 d.on('mousedown', 'a.menu_trigger', function () {
+
+                    console.log('mousedown');
+
                     if ($(this).next('ul.menu').is(':hidden')) {
+
                         JQD.util.clear_active();
-                        $(this).addClass('active').next('ul.menu').show();
+
+                        $(this).addClass('selected').next('ul.menu').show();
                     }
                     else {
                         JQD.util.clear_active();
@@ -143,17 +154,24 @@ var JQD = (function ($, window, document, undefined) {
 
                 // Transfer focus, if already open.
                 d.on('mouseenter', 'a.menu_trigger', function () {
+
+                    console.log("mouseenter");
+
                     if ($('ul.menu').is(':visible')) {
+
                         JQD.util.clear_active();
-                        $(this).addClass('active').next('ul.menu').show();
+
+                        $(this).addClass('selected').next('ul.menu').show();
+
                     }
+
                 });
 
                 // Cancel single-click.
                 d.on('mousedown', 'a.icon', function () {
                     // Highlight the icon.
                     JQD.util.clear_active();
-                    $(this).addClass('active');
+                    $(this).addClass('selected');
                 });
 
                 // Respond to double-click.
@@ -276,13 +294,13 @@ var JQD = (function ($, window, document, undefined) {
                     JQD.util.clear_active();
 
                     // Highlight row, ala Mac OS X.
-                    $(this).closest('tr').addClass('active');
+                    $(this).closest('tr').addClass('selected');
                 });
             },
             wallpaper: function () {
                 // Add wallpaper last, to prevent blocking.
                 if ($('#desktop').length) {
-                    $('body').prepend('<img id="wallpaper" class="abs" src="content/desktop/images/misc/wallpaper.jpg" />');
+                    $('body').prepend('<img id="wallpaper" class="abs" src="/Content/desktop/images/misc/wallpaper.jpg" />');
                 }
             }
         },
@@ -291,7 +309,10 @@ var JQD = (function ($, window, document, undefined) {
             // Clear active states, hide menus.
             //
             clear_active: function () {
-                $('a.active, tr.active').removeClass('active');
+
+                console.log("clear_active");
+
+                $('a.selected, tr.selected').removeClass('selected');
                 $('ul.menu').hide();
             },
             //

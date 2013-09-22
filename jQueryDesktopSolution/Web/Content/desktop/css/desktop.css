@@ -84,7 +84,7 @@ div.ui-resizable-handle {
   width: 80px;
 }
 
-.icon.active {
+.icon.selected {
   background: url(../images/gui/trans_black.png);
 }
 
@@ -332,7 +332,7 @@ table.data tbody tr:nth-child(even) td {
   background: #def;
 }
 
-table.data tbody tr.active td {
+table.data tbody tr.selected td {
   background: #06c url(../images/gui/bar_top_link.png) repeat-x;
   color: #fff;
 }
@@ -402,7 +402,7 @@ th.shrink {
   min-height: 1px;
 }
 
-#bar_top a.active {
+#bar_top a.selected {
   background-color: #06c;
   background-position: 0 0;
   background-repeat: repeat-x;
