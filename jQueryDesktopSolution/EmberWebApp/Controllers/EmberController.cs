@@ -16,5 +16,10 @@ namespace EmberWebApp.Controllers
             return View();
         }
 
+        public ActionResult ErrorIE()
+        {
+            return View();
+        }
+
     }
 }

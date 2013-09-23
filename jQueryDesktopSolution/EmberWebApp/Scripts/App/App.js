@@ -4,7 +4,9 @@ Ember.ENV.VERBOSE = false;
 // Support for <= IE9 when debug window isn't open.
 window.console = window.console || { log: Ember.K };
 
-window.fameapp = Ember.Application.create();
+window.fameapp = Ember.Application.create({
+    //rootElement:'#id'
+});
 
 // Debug support.
 if (Ember.ENV.DEBUG === true) {

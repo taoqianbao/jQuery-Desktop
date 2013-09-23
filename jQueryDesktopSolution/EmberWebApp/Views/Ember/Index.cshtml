@@ -15,8 +15,21 @@
         <meta name="description" content="" />
         <meta name="keywords" content="" />
         <meta name="author" content=""/>
+<!--[if lt IE 7]>
+<script>window.top.location = '/Ember/ErrorIE';</script>
+<![endif]-->
+    @Styles.Render("~/Content/desktop/css/reset.css", "~/Content/desktop/css/desktop.css")
+<!--[if lt IE 9]>
+    @Styles.Render("~/Content/desktop/css/ie.css") 
+<![endif]-->
+
         @* Stylesheets: *@
-        @Styles.Render("~/Content/css")
+        @*@Styles.Render("~/Content/css")*@
+
+@*
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+*@
 
         @* Script Dependecies: *@
         @Scripts.Render("~/bundles/jquery", "~/bundles/ember")
@@ -29,12 +42,14 @@
         </script>
     </head>
     <body data-accent="blue">
+
         @* Templates: *@
         @*@Scripts.Render("~/bundles/app-templates")*@
-
         @Html.RenderEmberTemplates()   
 
         @* Scripts: *@
         @Scripts.Render("~/bundles/app")
+
+        @Scripts.Render("~/Scripts/require.js", "~/Scripts/App/require.config.js")
     </body>
 </html>

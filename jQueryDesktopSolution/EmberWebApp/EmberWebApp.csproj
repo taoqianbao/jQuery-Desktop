@@ -47,6 +47,9 @@
       <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MimeHelper">
+      <HintPath>..\packages\MimeHelper.1.0\lib\net40\MimeHelper.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -139,6 +142,46 @@
     <Content Include="Content\bootstrap-responsive.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\desktop\css\desktop.css" />
+    <Content Include="Content\desktop\css\ie.css" />
+    <Content Include="Content\desktop\css\reset.css" />
+    <Content Include="Content\desktop\images\gui\bar_bottom.png" />
+    <Content Include="Content\desktop\images\gui\bar_top.png" />
+    <Content Include="Content\desktop\images\gui\bar_top_link.png" />
+    <Content Include="Content\desktop\images\gui\trans_black.png" />
+    <Content Include="Content\desktop\images\gui\trans_white.png" />
+    <Content Include="Content\desktop\images\gui\window_buttons.gif" />
+    <Content Include="Content\desktop\images\gui\window_content.gif" />
+    <Content Include="Content\desktop\images\gui\window_corner.gif" />
+    <Content Include="Content\desktop\images\icons\icon_16_computer.png" />
+    <Content Include="Content\desktop\images\icons\icon_16_disc.png" />
+    <Content Include="Content\desktop\images\icons\icon_16_documents.png" />
+    <Content Include="Content\desktop\images\icons\icon_16_drive.png" />
+    <Content Include="Content\desktop\images\icons\icon_16_folder.png" />
+    <Content Include="Content\desktop\images\icons\icon_16_folder_home.png" />
+    <Content Include="Content\desktop\images\icons\icon_16_folder_remote.png" />
+    <Content Include="Content\desktop\images\icons\icon_16_music.png" />
+    <Content Include="Content\desktop\images\icons\icon_16_network.png" />
+    <Content Include="Content\desktop\images\icons\icon_16_page.png" />
+    <Content Include="Content\desktop\images\icons\icon_16_photo.png" />
+    <Content Include="Content\desktop\images\icons\icon_16_server.png" />
+    <Content Include="Content\desktop\images\icons\icon_16_system.png" />
+    <Content Include="Content\desktop\images\icons\icon_16_trash.png" />
+    <Content Include="Content\desktop\images\icons\icon_16_vpn.png" />
+    <Content Include="Content\desktop\images\icons\icon_22_computer.png" />
+    <Content Include="Content\desktop\images\icons\icon_22_desktop.png" />
+    <Content Include="Content\desktop\images\icons\icon_22_disc.png" />
+    <Content Include="Content\desktop\images\icons\icon_22_drive.png" />
+    <Content Include="Content\desktop\images\icons\icon_22_network.png" />
+    <Content Include="Content\desktop\images\icons\icon_22_recycle.png" />
+    <Content Include="Content\desktop\images\icons\icon_32_computer.png" />
+    <Content Include="Content\desktop\images\icons\icon_32_disc.png" />
+    <Content Include="Content\desktop\images\icons\icon_32_drive.png" />
+    <Content Include="Content\desktop\images\icons\icon_32_network.png" />
+    <Content Include="Content\desktop\images\misc\album_cover.jpg" />
+    <Content Include="Content\desktop\images\misc\firehost.png" />
+    <Content Include="Content\desktop\images\misc\wallpaper.jpg" />
+    <Content Include="Content\desktop\images\misc\water.png" />
     <Content Include="Content\themes\base\images\animated-overlay.gif" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -206,6 +249,8 @@
     <Content Include="Scripts\App\App.js" />
     <Content Include="Scripts\App\Controllers\AboutController.js" />
     <Content Include="Scripts\App\Controllers\HomeController.js" />
+    <Content Include="Scripts\App\Libraries\jquery.desktop.js" />
+    <Content Include="Scripts\App\require.config.js" />
     <Content Include="Scripts\App\Router.js" />
     <Content Include="Scripts\App\Routes\IndexRoute.js" />
     <Content Include="Scripts\ember-1.0.0.debug.js" />
@@ -221,6 +266,9 @@
     <Content Include="Scripts\jquery-ui-1.10.3.js" />
     <Content Include="Scripts\jquery-ui-1.10.3.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\r.js" />
+    <Content Include="Scripts\require.js" />
+    <Content Include="Scripts\text.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -236,7 +284,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
     <Folder Include="Scripts\App\Helpers\" />
-    <Folder Include="Scripts\App\Libraries\" />
     <Folder Include="Scripts\App\Models\" />
     <Folder Include="Scripts\App\Views\" />
   </ItemGroup>
@@ -255,6 +302,8 @@
     <None Include="App_Readme\Handlebarsjs_LICENSE" />
     <None Include="App_Readme\Handlebarsjs_README.md" />
     <None Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Ember\ErrorIE.cshtml" />
+    <Content Include="Views\Shared\_viewstart.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
